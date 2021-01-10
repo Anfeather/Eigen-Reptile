@@ -73,7 +73,7 @@ Our model achieves the following performance on :
 ### [Noisy Few-shot Classification on Corrupted Mini-Imagenet (Asymmetric Noise)]
 
 | Model name         |  p=0.1 | p=0.2  | p=0.5 |
-| ------------------ |---------------- | -------------- |---------------- | -------------- |
+| ------------------ |---------------- | -------------- |---------------- |
 | Reptile | 47.30% | 45.51 %| 42.03%|
 | Eigen-Reptile      | 47.42%  | 46.50\%  | 42.29%  |
 | Eigen-Reptile+ISPL      | 47.24%  | 46.83\%  | 43.71%  |
