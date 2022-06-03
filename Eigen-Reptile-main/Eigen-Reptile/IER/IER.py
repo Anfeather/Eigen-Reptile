@@ -49,11 +49,6 @@ class IER:
                 m_k += 1
                 inputs, labels = zip(*batch)
 
-                # print("labels:",labels)
-                # print("noise:",flip_label(labels,ratio = ratio))
-
-                #labels = flip_label(labels,ratio = 0.4)
-
                 if self._pre_step_op:
                     self.session.run(self._pre_step_op)
                 self.session.run(minimize_op, feed_dict={input_ph: inputs, label_ph: labels})
