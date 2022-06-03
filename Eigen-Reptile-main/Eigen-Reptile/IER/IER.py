@@ -49,6 +49,8 @@ class IER:
                 m_k += 1
                 inputs, labels = zip(*batch)
 
+
+
                 if self._pre_step_op:
                     self.session.run(self._pre_step_op)
                 self.session.run(minimize_op, feed_dict={input_ph: inputs, label_ph: labels})
@@ -99,6 +101,7 @@ class IER:
                    input_ph,
                    label_ph,
                    minimize_op,
+                   ratio,
                    num_classes,
                    num_shots,
                    inner_batch_size,
@@ -124,6 +127,7 @@ class IER:
                 weights_li = []
                 m_k += 1
                 inputs, labels = zip(*batch)
+                # labels = flip_label(labels,ratio,sym)
                 if self._pre_step_op:
                     self.session.run(self._pre_step_op)
                 self.session.run(minimize_op, feed_dict={input_ph: inputs, label_ph: labels})
@@ -355,7 +359,7 @@ def get_mean(matrix,n):
 
 
 
-def flip_label(y, ratio,  pattern='sym', one_hot=False,n_class=5):
+def flip_label(y, ratio,  pattern='asym', one_hot=False,n_class=5):
     #y: true label, one hot
     #pattern: 'pair' or 'sym'
     #p: float, noisy ratio
