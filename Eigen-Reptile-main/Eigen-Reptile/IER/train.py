@@ -62,7 +62,7 @@ def train(sess,
         cur_meta_step_size = frac_done * meta_step_size_final + (1 - frac_done) * meta_step_size
 
 
-        IER.train_step_Eigen_O(train_set, model.input_ph, model.label_ph, model.minimize_op,
+        IER.train_step_Eigen_O(train_set, model.input_ph, model.label_ph, model.minimize_op, ratio,
                         num_classes=num_classes,  num_shots=(train_shots or num_shots),
                         inner_batch_size=inner_batch_size, inner_iters=inner_iters,
                         replacement=replacement,
