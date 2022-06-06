@@ -21,7 +21,7 @@ nohup python3 -u run_miniimagenet.py --ratio 0.0 --shots 1 --inner-batch 10 --in
 
 nohup python3 -u run_miniimagenet.py --ratio 0.0 --inner-batch 10 --inner-iters 7 --meta-step 1 --meta-batch 5 --meta-iters 100000 --eval-batch 15 --eval-iters 50 --learning-rate 0.0005 --meta-step-final 0 --train-shots 15 --checkpoint ckpt_m55_train_test --transductive > mtest55_train_test.log 2>&1 &
 
-For noisy FSL, you should uncomment line 130 at first, then choose the type of noise (i.e., asym and sym). Note that we change the hyperparameters to make all methods get similar results when p=0 to examine the robustness of all methods.
+For symmetric noise, you should uncomment line 130 at first. For asymmetric noise, you should run create_noise.py at first to generate the corresponding dataset. Note that we change the hyperparameters to make all methods get similar results when p=0 to examine the robustness of all methods.
 
 nohup python3 -u run_miniimagenet.py --ratio 0.5 --shots 1 --inner-batch 10 --inner-iters 7 --meta-step 1 --meta-batch 5 --meta-iters 10000 --eval-batch 5 --eval-iters 50 --learning-rate 0.001 --meta-step-final 0 --train-shots 15 --checkpoint ckpt_m15t_train --transductive > mtest15_train_anoise.log 2>&1 &
 ## Results
